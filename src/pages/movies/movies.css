@@ -1,0 +1,22 @@
+.background{
+    background-image: url(../../images/1.jpeg);
+    background-size:100% 100%;
+    background-repeat: no-repeat;
+    height: 84vh;
+    position: relative;
+}
+
+h1{
+    color: #868383;
+}
+.favorite{
+    width: 60%;
+    margin-left: 35%;
+    box-shadow: 20px 20px 20px rgb(232, 229, 229);
+}
+
+.pagination{
+    position: absolute;
+    top:90%;
+    left: 45%;
+}

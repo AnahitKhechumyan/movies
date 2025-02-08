@@ -1,0 +1,13 @@
+ .text{
+    background-color: rgb(244, 242, 242);
+    width: 40%;
+    height: 40%;
+    border-radius: 15px;
+    padding: 30px;
+    
+    box-shadow: 20px 20px 20px rgb(81, 77, 77);
+ }
+ .d-flex{
+    background-color: rgb(215, 213, 213);
+    align-items: center;
+ }
