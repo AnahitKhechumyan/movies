@@ -1,9 +1,10 @@
-import React, { useState, useReducer, useEffect, useRef} from "react";
+import React, { useState,useContext, useReducer, useEffect, useRef} from "react";
 import axios from 'axios';
 import { Table } from "../../components/table/table";
 import { Modal } from "../../components/modal/modal";
 import { omdbApi } from "../../api/movie.api";
 import { MovieDetails } from "./movie-details/movie-details";
+import { MoviesContext } from "../../contexts/movies-context";
 import { APP_TITLE } from "../../utils/constants";
 import { getAppTitleByMovie } from "../../utils/helpers";
 import {Pagination} from "../../components/pagination";
@@ -30,7 +31,8 @@ const searchMovieReducer = (state, action) =>{
         break;
   }
 };
-export const SearchMovies = ({ searchQuery }) => {
+export const SearchMovies = () => {
+  const {searchQuery, onSearch} = useContext(MoviesContext);
    
   const [state, dispatch] = useReducer(searchMovieReducer, initialState);
 
@@ -137,7 +139,7 @@ const nPages = Math.ceil(state.data.length / moviesPerPage);
         onClose={handleCloseModal}
         title={getAppTitleByMovie(state.selectedMovie?.Title, state.selectedMovie?.Year)}
       >
-        <MovieDetails id={state.selectedMovie?.imdbID} />
+      <MovieDetails id={state.selectedMovie?.imdbID} />
       </Modal>
        
     </div>

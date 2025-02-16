@@ -1,3 +1,6 @@
+.nav{
+    background-color: rgb(103, 101, 101);
+}
 .nav .nav-item .nav-link{
     background-color: rgb(88, 85, 85);
     color: whitesmoke;

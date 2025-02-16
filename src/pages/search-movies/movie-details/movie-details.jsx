@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { omdbApi } from "../../../api/movie.api";
 import "./movie-details.css";
 import { useLocalStorageState } from "../../../hooks/use-local-storage-state";
+import {Flag} from "../../../components/flag/flag";
+import oscar from "../../../assets/images/oscar.png";
+import {CiAlarmOn } from "react-icons/ci";
+import { FcGlobe } from "react-icons/fc";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 export const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
@@ -60,6 +65,16 @@ export const MovieDetails = ({ id }) => {
             width={300}
             className="h-auto rounded d-block"
           />
+          <ul className="list-group list-group-flush">
+            {(movie?.Ratings || []).map((rating,index) => (
+              <li  key={rating.Source} className="list-group-item d-flex justify-content-between align-items-center">
+                 {rating.Source}
+                 <span className="badge text-bg-primary rounded-pill">
+                     {rating.Value}
+                 </span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="text">
           <p className="text-gray-600">
@@ -74,7 +89,37 @@ export const MovieDetails = ({ id }) => {
           <p className="text-gray-600">
             <strong>Language:</strong> {movie.Language}
           </p>
+          <p className="text-gray-600">
+            <strong>Countries:</strong>
+            <FcGlobe />
+            {(movie.Country || "").split(", ").map((country, index)=> (
+              <Flag key={country} country={country}/>
+            ))}
+          </p>
+          <p className="text-gray-600">
+            <strong>Released:</strong>
+            <FaRegCalendarCheck />
+             {movie.Released}
+          </p>
+          <p className="text-gray-600">
+            <strong>Runtime:</strong>
+            <CiAlarmOn/>
+             {movie.Runtime}
+          </p>
+          <p className="text-gray-600">
+            <strong>IMDB Votes:</strong> {movie.imdbVotes}
+          </p>
+          <p className=" mt-4 text-gray-700"> {movie.Plot}</p>
+          <p className=" mt-2 text-gray-600">
+            <strong>Box Office:</strong> {movie.BoxOffice}
+          </p>
+          <p className=" mt-2 text-gray-600">
+            <strong>Awards:</strong>
+            <img src={oscar} alt="" width={25} height={25} /> 
+            {movie.Awards}
+          </p>
         </div>
+         
         <div>
             <button  className="btn btn-link" onClick={handleUpdateFavoriteStatus}> 
               {

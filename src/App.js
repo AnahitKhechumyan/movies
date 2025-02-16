@@ -1,45 +1,56 @@
-import React, { useState } from "react";
-import "./App.css";
+import React, { useContext } from "react";
 import { Header } from "./components/header/header";
 import { SearchMovies } from "./pages/search-movies/search-movies";
 import { Movies } from "./pages/movies/movies";
+import { MoviesProvider, tab, MoviesContext } from "./contexts/movies-context";
+import {Quizis} from "./components/quizis/quizis";
+import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css" 
- 
-export const tab = {
-  search: "search",
-  movies: "movies",
-}; 
 
-function App() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [activeTab, setActiveTab] = useState(tab.search);
+
+ 
+const Tabs = ()=>{
+  const {setActiveTab} = useContext(MoviesContext);
   
-    
+  return (
+    <ul className="nav nav-tabs">
+       <li className="nav-item">
+          <button
+            onClick={() => setActiveTab(tab.search)}
+            className="nav-link"
+          >
+             Search Movies
+          </button>
+        </li>
+        <li className="nav-item">
+            <button onClick={() => setActiveTab(tab.movies)} className="nav-link">
+               My Movie List
+             </button>
+        </li>
+        <li className="nav-item">
+            <button onClick={() => {}} className="nav-link">
+                Quizis
+            </button>
+        </li>
+     </ul>
+  );
+};
+
+const Layout =()=>{
+  const {activeTab} = useContext(MoviesContext);
+  return activeTab === tab.search ? <SearchMovies /> : <Movies /> || <Quizis/>;
+};
+
+ 
+function App() {
    return (
-    <div className="App">
-       <Header searchQuery={searchQuery} onSearch={setSearchQuery} />
-        <ul className="nav nav-tabs">
-            <li className="nav-item">
-              <button
-                onClick={() => setActiveTab(tab.search)}
-                className="nav-link"
-              >
-                Search Movies
-              </button>
-            </li>
-            <li className="nav-item">
-              <button onClick={() => setActiveTab(tab.movies)} className="nav-link">
-                My Movie List
-              </button>
-            </li>
-        </ul>
-      {activeTab === tab.search ? (
-        <SearchMovies searchQuery={searchQuery} />
-      ) : (
-        <Movies />
-      )}
-         
-    </div>
+    <MoviesProvider> 
+      <div className="App">
+        <Header />
+        <Tabs/>
+        <Layout />
+      </div>
+    </MoviesProvider>
   );
 }
 
