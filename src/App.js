@@ -2,34 +2,44 @@ import React, { useContext } from "react";
 import { Header } from "./components/header/header";
 import { SearchMovies } from "./pages/search-movies/search-movies";
 import { Movies } from "./pages/movies/movies";
+import { Quiz } from "./pages/quiz/quiz";
 import { MoviesProvider, tab, MoviesContext } from "./contexts/movies-context";
-import {Quizis} from "./components/quizis/quizis";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css" 
 
 
  
 const Tabs = ()=>{
-  const {setActiveTab} = useContext(MoviesContext);
+  const {setActiveTab, activeTab} = useContext(MoviesContext);
+
+  const getTabClasses = (tab) => {
+    return `nav-link ${activeTab === tab ? "active" : ""}`;
+  };
   
   return (
     <ul className="nav nav-tabs">
        <li className="nav-item">
           <button
             onClick={() => setActiveTab(tab.search)}
-            className="nav-link"
+            className={getTabClasses(tab.search)}
           >
              Search Movies
           </button>
         </li>
         <li className="nav-item">
-            <button onClick={() => setActiveTab(tab.movies)} className="nav-link">
+            <button 
+             onClick={() => setActiveTab(tab.movies)}
+             className={getTabClasses(tab.movies)} 
+            >
                My Movie List
              </button>
         </li>
         <li className="nav-item">
-            <button onClick={() => {}} className="nav-link">
-                Quizis
+            <button 
+             onClick={() => setActiveTab(tab.quiz)}
+             className={getTabClasses(tab.quiz)}
+            >
+                Quiz
             </button>
         </li>
      </ul>
@@ -37,8 +47,15 @@ const Tabs = ()=>{
 };
 
 const Layout =()=>{
-  const {activeTab} = useContext(MoviesContext);
-  return activeTab === tab.search ? <SearchMovies /> : <Movies /> || <Quizis/>;
+  const { activeTab } = useContext(MoviesContext);
+
+  return (
+    <>
+      {activeTab === tab.search && <SearchMovies />}
+      {activeTab === tab.movies && <Movies />}
+      {activeTab === tab.quiz && <Quiz />}
+    </>
+  );
 };
 
  
