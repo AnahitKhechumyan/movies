@@ -4,7 +4,9 @@ import { quizApi } from "../../api/quiz.api";
 import { Loading } from "./components/loading/loading";
 import { Error } from "./components/error/error";
 import { StartScreen } from "./components/start-screen/start-screen";
-import { ActiveQuiz } from "../../pages/active-quiz/active-quiz";
+import { Progress } from "./components/proggress/proggress";
+import { Questions } from "./components/questions/questions";
+import { Footer } from "./components/footer/footer";
 
 const QuizApp = () => {
   const { status, dispatch } = useContext(QuizContext);
@@ -25,7 +27,13 @@ const QuizApp = () => {
         {status === "loading" && <Loading />}
         {status === "error" && <Error />}
         {status === "ready" && <StartScreen />}
-        {status === "active" && <ActiveQuiz />}
+        {status === "active" && <>
+        <Progress />
+        <Questions />
+        <Footer />
+        </>
+        }
+        {status === "finished" && <Quiz />}
       </main>
     </div>
   );

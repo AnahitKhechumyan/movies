@@ -1,21 +1,23 @@
-class QuizApi {
-    constructor() {
-      this.baseUrl = "http://localhost:3001";
+import {BaseApi} from './base.js';
+
+export class QuizApi extends BaseApi {
+  constructor(baseUrl) {
+    super();
+    this.baseUrl = baseUrl;
+  }
+
+  async getQuestions() {
+    try {
+      const response = await fetch(this.getFullUrl("quiz?limit=30"));
+      const data = await response.json();
+      return {
+               success: response.status === 200,
+               data,
+              error: response.status !== 200 ? response.error : null,
+            };
+    } catch (error) {
+      return { success: false, data: null, error: error.message };
     }
-  
-    async getQuestions() {
-      try {
-        const response = await fetch(`${this.baseUrl}/questions`);
-        const data = await response.json();
-        return {
-          success: response.status === 200,
-          data,
-          error: response.status !== 200 ? response.error : null,
-        };
-      } catch (error) {
-        return { success: false, data: null, error: error.message };
-      }
-    }
-  };
-  
-  export const quizApi = new QuizApi();
+  }
+};
+export const quizApi = new QuizApi("https://simple-blog-api-red.vercel.app/");

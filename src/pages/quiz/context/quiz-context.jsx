@@ -4,6 +4,9 @@ const QuizContext = createContext();
 
 const initialState = {
   status: "loading",
+  index: 0,
+  answer: null,
+  points: 0,
   questions: [],
 };
 
@@ -23,8 +26,31 @@ function reducer(state, action) {
       };
     case "START":
       return {
+        ...state,
         status: "active",
       };
+      case "NEW_ANSWER":
+        const question = state.questions[state.index];
+        const newPoints = 
+           action.payload === question.correctOption 
+           ? state.points + question.points
+           : state.points;
+        return {
+          ...state,
+          answer: action.payload,
+          points: newPoints,
+        };
+      case "NEXT_QUESTION":
+        return {
+          ...state,
+          answer: null,
+          index: state.index + 1,
+        };
+        case "FINISH":
+          return {
+            initialState,
+            status: "finished",
+            };     
     default:
       throw new Error("Something went wrong!");
   }
@@ -32,13 +58,12 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { status, questions } = state;
+  //const { status, questions } = state;
 
   return (
     <QuizContext.Provider
       value={{
-        status,
-        questions,
+        ...state,
 
         dispatch,
       }}

@@ -1,12 +1,4 @@
-:root {
-    --color-darkest: #ebeff2;
-    --color-dark: #dddddd;
-    --color-medium: #ced4da;
-    --color-light: #d15fed;
-    --color-theme: #959999;
-    --color-accent: #ebf745;
-  }
-  
+
   .quiz-game {
     display: flex;
     flex-direction: column;

@@ -23,12 +23,12 @@
         "points": 10
       },
       {
-        "question": "What is the highest-grossing movie of all time (as of 2024)?",
+        "question": "Which animated movie features a character named Woody?",
         "options": [
-          "Avengers: Endgame",
-          "Titanic",
-          "Avatar",
-          "The Lion King"
+          "Shrek",
+          "Finding Nemo",
+          "Toy Story",
+          "The Incredibles"
         ],
         "correctOption": 2,
         "points": 10
