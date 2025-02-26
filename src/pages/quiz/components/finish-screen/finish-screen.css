@@ -1,0 +1,13 @@
+span{
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--color-darkest);
+}
+
+.result{
+    flex-direction: column;
+}
+ 
+.btn-restart{
+    margin-left: 25%;
+}

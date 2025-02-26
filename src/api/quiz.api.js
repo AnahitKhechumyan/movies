@@ -8,7 +8,7 @@ export class QuizApi extends BaseApi {
 
   async getQuestions() {
     try {
-      const response = await fetch(this.getFullUrl("quiz?limit=30"));
+      const response = await fetch(this.getFullUrl("quiz?limit=10"));
       const data = await response.json();
       return {
                success: response.status === 200,

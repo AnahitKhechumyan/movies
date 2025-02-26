@@ -8,15 +8,21 @@ const initialState = {
   answer: null,
   points: 0,
   questions: [],
+  maxPossiblePoints:0,
+  secondsRemaining: null,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "DATA_RECEIVED":
+      const maxPossiblePoints = action.payload.reduce((prev,cur)=> {
+        return prev + cur.points;
+    },0);
       return {
         ...state,
         questions: action.payload,
         status: "ready",
+        maxPossiblePoints,
       };
 
     case "DATA_FAILED":
@@ -28,6 +34,7 @@ function reducer(state, action) {
       return {
         ...state,
         status: "active",
+        secondsRemaining:state.questions.length * 30,
       };
       case "NEW_ANSWER":
         const question = state.questions[state.index];
@@ -48,9 +55,22 @@ function reducer(state, action) {
         };
         case "FINISH":
           return {
-            initialState,
+            ...state,
             status: "finished",
-            };     
+            };
+        case "RESTART":
+          return {
+            ...initialState,
+            questions: state.questions,
+            status: "ready",
+          };
+          case "TICK":
+          return {
+            ...state,
+            secondsRemaining: state.secondsRemaining-1,
+            status: state.secondsRemaining === 0 ? "finished" : state.status
+          };
+               
     default:
       throw new Error("Something went wrong!");
   }
@@ -58,8 +78,7 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-  //const { status, questions } = state;
-
+ 
   return (
     <QuizContext.Provider
       value={{

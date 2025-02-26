@@ -1,13 +1,4 @@
-.clock-container{
-    margin-left: 25%;
-    color:var(--color-darkest);
-}
-.clock{
-    font-size: 25px;
-    font-weight: bold;
-    font-family: monospace;
-    box-shadow: 3px 3px 5px var(--color-shadow);
-}
+
 .btn-secondery{
     margin-right: 25%;
     border-radius: 15px;
@@ -26,6 +17,10 @@
    font-size: 30px;
    color: white;
  }
+
+h5{
+  margin-left: 25%;
+}
   
    
  
