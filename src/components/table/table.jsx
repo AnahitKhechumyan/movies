@@ -4,9 +4,7 @@ import imdbLogo from "../../assets/images/imdbLogo.png";
 export const Table = ({ data, onRowClick}) => {
   const handleOpenIMDBMovie = (event, imdbID) => {
     event.stopPropagation();
-    window.open( `https://www.imdb.com/title/${imdbID}`,"")
-      // `https://www.imdb.com/title/${event.target.dataset.imdbId}/`
-     
+    window.open( `https://www.imdb.com/title/${imdbID}`,"")   
   };
   
     return (

@@ -11,7 +11,7 @@ export const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
         if(currentPage !== 1) setCurrentPage(currentPage - 1)
     }
     return (
-        <nav>
+        <nav >
             <ul className='pagination justify-content-center'>
                 <li className="page-item">
                     <a className="page-link" 

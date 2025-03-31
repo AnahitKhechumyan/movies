@@ -1,9 +1,10 @@
 import {useState, useEffect} from "react";
-import { Table } from "../../components/table/table";
 import axios from 'axios';
-import "./movies.css";
+import videoBg1 from '../../assets/images/videoBg1.mp4';
+import { Table } from "../../components/table/table";
 import { useLocalStorageState } from "../../hooks/use-local-storage-state"; 
 import {Pagination} from "../../components/pagination";
+import "./movies.css";
 
 export const Movies = () => {
   const [moviesState, setMovies] = useLocalStorageState([], "movies");
@@ -33,8 +34,10 @@ const nPages = Math.ceil(moviesState.length / moviesPerPage);
   
     return (
       <div className="background">
-        <i className="bi bi-heart" style={{fontSize: "2rem", color: "red"}}>My Favorite Movies</i> 
+        <video src={videoBg1} autoPlay loop muted/>
+        {/* <i className="bi bi-heart" style={{fontSize: "2rem", color: "red"}}>My Favorite Movies</i>  */}
         <div className="favorite">
+            <i className="bi bi-heart" style={{fontSize: "2rem", color: "red"}}>My Favorite Movies</i> 
              <Table data={currentMovies} onRowClick={()=>{}} />
         </div>
         <Pagination

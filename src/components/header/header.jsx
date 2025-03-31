@@ -1,6 +1,6 @@
 import React, {useRef, useContext, useEffect} from "react";
 import { MoviesContext, tab } from "../../contexts/movies-context";
-import { BiSolidMoviePlay } from "react-icons/bi";
+// import { BiSolidMoviePlay } from "react-icons/bi";
 import "./header.css";
 
 export const Header = ()=>{
@@ -14,7 +14,8 @@ export const Header = ()=>{
   return (
       <header className="bg-secondary text-white p-3 d-flex ">
         <div className="logo">
-          <span><BiSolidMoviePlay /></span>
+          <span>🎬</span>
+          {/* <span><BiSolidMoviePlay /></span> */}
           <h1>My Movies</h1>
         </div>
         {activeTab === tab.search && (

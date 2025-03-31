@@ -5,13 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(197, 200, 202);
-  background-image: url(./assets/images/2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover; 
+   background-color: rgb(197, 200, 202);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+ 

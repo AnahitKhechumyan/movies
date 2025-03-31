@@ -6,8 +6,6 @@ import { Quiz } from "./pages/quiz/quiz";
 import { MoviesProvider, tab, MoviesContext } from "./contexts/movies-context";
 import "./App.css";
 import "bootstrap-icons/font/bootstrap-icons.css" 
-
-
  
 const Tabs = ()=>{
   const {setActiveTab, activeTab} = useContext(MoviesContext);
@@ -63,9 +61,9 @@ function App() {
    return (
     <MoviesProvider> 
       <div className="App">
-        <Header />
-        <Tabs/>
-        <Layout />
+          <Header />
+          <Tabs/>
+          <Layout />
       </div>
     </MoviesProvider>
   );

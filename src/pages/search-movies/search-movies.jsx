@@ -8,6 +8,8 @@ import { MoviesContext } from "../../contexts/movies-context";
 import { APP_TITLE } from "../../utils/constants";
 import { getAppTitleByMovie } from "../../utils/helpers";
 import {Pagination} from "../../components/pagination";
+import videoBg from "../../assets/images/videoBg.mp4";
+import "./search-movies.css";
  
 const initialState = {
   data: [],
@@ -127,21 +129,23 @@ const nPages = Math.ceil(state.data.length / moviesPerPage);
   };
 
   return (
-    <div className="container mt-4">
-      <Table data={currentMovies} onRowClick={handleRowClick} />
-      <Pagination
+    <div className="container">
+      <video src={videoBg} autoPlay loop muted/>
+      <div className="content">
+          <Table data={currentMovies} onRowClick={handleRowClick} />
+          <Pagination
                 nPages={nPages}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
-       />
-      <Modal
+          />
+           <Modal
         open={state.open}
         onClose={handleCloseModal}
         title={getAppTitleByMovie(state.selectedMovie?.Title, state.selectedMovie?.Year)}
       >
       <MovieDetails id={state.selectedMovie?.imdbID} />
       </Modal>
-       
+      </div>  
     </div>
   );
 };

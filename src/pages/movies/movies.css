@@ -1,23 +1,27 @@
 .background{
-    background-image: url(../../assets/images/1.jpeg);
-    background-size:100% 100%;
-    background-repeat: no-repeat;
-    height: 84vh;
-    position: relative;
-}
-
+        width: 100%;
+        height: 84vh;
+    }
+video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+} 
+     
 h1{
     color: #868383;
 }
 .favorite{
-    width: 60%;
-    margin-left: 35%;
+    position: absolute;
+    top: 110px;
+    left: 40%;
+    width: 55%;
     box-shadow: 20px 20px 20px rgb(232, 229, 229);
 }
 
 .pagination{
     position: absolute;
-    top:90%;
-    left: 45%;
+    top:92%;
+    right:10px;
 }
  
