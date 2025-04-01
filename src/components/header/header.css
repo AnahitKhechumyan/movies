@@ -1,14 +1,17 @@
+.bg-secondary{
+    background-image: linear-gradient(rgb(115, 111, 108), rgb(245, 146, 93));
+}
 .logo{
     display: flex;
     align-items: center;
     gap: 14px;
   }
   
-  .logo span{
+.logo span{
     font-size: 25px;
   }
   
-  .logo h1{
+ .logo h1{
     font-size: 22px;
     font-weight: 600;
     margin: 0;
@@ -16,8 +19,8 @@
   }
   .form-control{
     position: absolute;
-    left: 50%;
-    width: 45%;
+    left: 62%;
+    width: 30%;
     background-color: rgb(199, 196, 196);
     border: 3px solid white;
   }

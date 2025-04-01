@@ -6,3 +6,12 @@
  th{
     color: rgb(205, 74, 4) !important;
  }
+
+ .modal-title{
+   color: rgb(203, 96, 38) !important;
+   font-weight: bold;
+ }
+ .modal-header{
+   background-color: rgb(248, 241, 238) !important;
+
+ }

@@ -43,7 +43,7 @@ const QuizApp = () => {
 export const Quiz = () => {
   return (
     <QuizProvider>
-      <QuizApp />
+        <QuizApp />
     </QuizProvider>
   );
 };
