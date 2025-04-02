@@ -3,9 +3,10 @@ import { Header } from "./components/header/header";
 import { SearchMovies } from "./pages/search-movies/search-movies";
 import { Movies } from "./pages/movies/movies";
 import { Quiz } from "./pages/quiz/quiz";
+import { GoogleMap } from "./pages/map/map";
 import { MoviesProvider, tab, MoviesContext } from "./contexts/movies-context";
-import "./App.css";
-import "bootstrap-icons/font/bootstrap-icons.css" 
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./App.css"; 
  
 const Tabs = ()=>{
   const {setActiveTab, activeTab} = useContext(MoviesContext);
@@ -37,7 +38,15 @@ const Tabs = ()=>{
              onClick={() => setActiveTab(tab.quiz)}
              className={getTabClasses(tab.quiz)}
             >
-                Quiz
+             <i class="bi bi-camera-reels"></i> Quiz
+            </button>
+        </li>
+        <li className="nav-item">
+            <button 
+             onClick={() => setActiveTab(tab.map)}
+             className={getTabClasses(tab.map)}
+            >
+            <i class="bi bi-geo-alt"></i>  You can find the Cinema nearest You here.
             </button>
         </li>
      </ul>
@@ -52,6 +61,7 @@ const Layout =()=>{
       {activeTab === tab.search && <SearchMovies />}
       {activeTab === tab.movies && <Movies />}
       {activeTab === tab.quiz && <Quiz />}
+      {activeTab === tab.map && <GoogleMap />}
     </>
   );
 };

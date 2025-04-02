@@ -35,7 +35,6 @@ const nPages = Math.ceil(moviesState.length / moviesPerPage);
     return (
       <div className="background">
         <video src={videoBg1} autoPlay loop muted/>
-        {/* <i className="bi bi-heart" style={{fontSize: "2rem", color: "red"}}>My Favorite Movies</i>  */}
         <div className="favorite">
             <i className="bi bi-heart" style={{fontSize: "2rem", color: "red"}}>My Favorite Movies</i> 
              <Table data={currentMovies} onRowClick={()=>{}} />
@@ -46,6 +45,5 @@ const nPages = Math.ceil(moviesState.length / moviesPerPage);
                 setCurrentPage={setCurrentPage}
          />
       </div>
-
     );
   };

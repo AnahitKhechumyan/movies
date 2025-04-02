@@ -132,12 +132,16 @@ const nPages = Math.ceil(state.data.length / moviesPerPage);
     <div className="container">
       <video src={videoBg} autoPlay loop muted/>
       <div className="content">
-          <Table data={currentMovies} onRowClick={handleRowClick} />
-          <Pagination
-                nPages={nPages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-          />
+          {
+            searchQuery !== ""  && <Table data={currentMovies} onRowClick={handleRowClick} />
+          }
+          {
+            currentMovies.length !== 0 &&  <Pagination
+            nPages={nPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            />
+          }
            <Modal
         open={state.open}
         onClose={handleCloseModal}

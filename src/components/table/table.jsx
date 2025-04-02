@@ -1,5 +1,5 @@
-import "./table.css";
-import imdbLogo from "../../assets/images/imdbLogo.png";
+ import imdbLogo from "../../assets/images/imdbLogo.png";
+ import "./table.css";
 
 export const Table = ({ data, onRowClick}) => {
   const handleOpenIMDBMovie = (event, imdbID) => {
