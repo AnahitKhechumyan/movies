@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
 import { QuizProvider, QuizContext } from "./context/quiz-context";
-import { quizApi } from "../../api/quiz.api";
-import { Loading } from "./components/loading/loading";
+import { quizApi } from "../../api/quiz.api"; import { Loading } from "./components/loading/loading";
 import { Error } from "./components/error/error";
 import { StartScreen } from "./components/start-screen/start-screen";
 import { Progress } from "./components/proggress/proggress";

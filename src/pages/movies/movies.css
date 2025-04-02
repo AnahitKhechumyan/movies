@@ -24,4 +24,8 @@ h1{
     top:92%;
     right:10px;
 }
+.page-link{
+    background-color: var(--color-dark);
+    color: var(--color-shadow);
+}
  

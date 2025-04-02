@@ -31,11 +31,11 @@ export const Table = ({ data, onRowClick}) => {
                   <td>{movie.Type}</td>
                   <td className="text-md-end">
                      <div className="d-flex justify-content-end">
-                         <button className="btn btn-link" 
-                         onClick={(event)=>handleOpenIMDBMovie(event, movie.imdbID)}>
-                          Watch on IMDB
-                          <img src={imdbLogo} alt="" width={30} height={15} />
-                          </button>
+                        <button className="btn btn-link" 
+                           onClick={(event)=>handleOpenIMDBMovie(event, movie.imdbID)}>
+                           Watch on IMDB 
+                        <img src={imdbLogo} alt="" width={30} height={15} />
+                        </button>
                      </div>
                   </td>
                   <td> </td>
