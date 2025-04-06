@@ -38,5 +38,4 @@
   }
   
   export const omdbApi = new OMDBApi(process.env.REACT_APP_OMDB_API_KEY); 
-  //export const omdbApi = new OMDBApi("212ace35");
   

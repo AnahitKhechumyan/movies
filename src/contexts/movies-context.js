@@ -7,6 +7,7 @@
     movies: "movies",
     quiz: "quiz",
     map: "map",
+    signin: "signin",
   }; 
  
  export const MoviesProvider = ({children}) => {

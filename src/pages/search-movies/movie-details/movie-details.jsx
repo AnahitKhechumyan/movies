@@ -5,7 +5,7 @@ import { useLocalStorageState } from "../../../hooks/use-local-storage-state";
 import {Flag} from "../../../components/flag/flag";
 import oscar from "../../../assets/images/oscar.png";
 import {CiAlarmOn } from "react-icons/ci";
-import { FcGlobe } from "react-icons/fc";
+import { FaGlobe } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa";
 
 export const MovieDetails = ({ id }) => {
@@ -90,20 +90,18 @@ export const MovieDetails = ({ id }) => {
             <strong>Language:</strong> {movie.Language}
           </p>
           <p className="text-gray-600">
-            <strong>Countries:</strong>
-            <FcGlobe />
+            <strong>Countries:  <FaGlobe />  </strong>
+             
             {(movie.Country || "").split(", ").map((country, index)=> (
               <Flag key={country} country={country}/>
             ))}
           </p>
           <p className="text-gray-600">
-            <strong>Released:</strong>
-            <FaRegCalendarCheck />
+            <strong>Released:  <FaRegCalendarCheck />   </strong>
              {movie.Released}
           </p>
           <p className="text-gray-600">
-            <strong>Runtime:</strong>
-            <CiAlarmOn/>
+            <strong>Runtime:   <CiAlarmOn/>   </strong>
              {movie.Runtime}
           </p>
           <p className="text-gray-600">

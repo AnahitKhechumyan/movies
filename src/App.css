@@ -14,4 +14,9 @@
 .nav .nav-item .nav-link:hover{
     background-color: rgb(248, 240, 240);
     color: rgb(81, 81, 81);
-} 
+}
+
+.last{
+    position: absolute;
+    right: 0;
+}

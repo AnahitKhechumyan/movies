@@ -6,7 +6,7 @@ export const Progress = ()=> {
     const {points, index, questions, answer, isCorrect} = useContext(QuizContext);
     return (
         <header className="q-progress">
-             <progress  
+             <progress   
                 max={questions.length}
                 value={index + Number(answer !== null)} 
             />   

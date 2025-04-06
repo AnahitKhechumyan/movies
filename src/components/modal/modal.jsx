@@ -19,7 +19,7 @@ export function Modal({ open, onClose, children, title }) {
       <div className="modal-dialog modal-xl">
         <div className="modal-content">
           <div className="modal-header d-flex justify-content-between">
-            <h5 className="modal-title h4" id="myExtraLargeModalLabel">
+            <h5 className="modal-title" id="myExtraLargeModalLabel">
               {title}
             </h5>
             <button
@@ -28,7 +28,7 @@ export function Modal({ open, onClose, children, title }) {
               onClick={onClose}
             ></button>
           </div>
-          <div className="modal-body">{children}</div>
+          <div className="modal-body" style={{height: "90vh"}}>{children}</div>
         </div>
       </div>
     </div>

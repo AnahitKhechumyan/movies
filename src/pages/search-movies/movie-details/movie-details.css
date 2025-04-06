@@ -9,3 +9,6 @@
  .d-flex{
     align-items: center;
  }
+ .badge{
+   background-color: #e87e32 !important;
+ }
