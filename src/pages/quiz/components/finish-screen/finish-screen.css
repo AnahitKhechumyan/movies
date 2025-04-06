@@ -7,6 +7,11 @@ span{
 .result{
     flex-direction: column;
 }
+
+.result span{
+    font-size: 30px;
+    color: #782003;
+}
  
 .btn-restart{
     margin-left: 25%;

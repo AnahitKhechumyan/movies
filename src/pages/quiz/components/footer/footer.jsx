@@ -27,7 +27,7 @@ export const Footer = ()=> {
    
     return (
         <footer className="d-flex justify-content-between align-items-center">
-            <h5>{timer}</h5> 
+            <span>{timer}</span> 
             {answer !== null && index < questions.length-1 && (
             <button className="btn-secondery"
             onClick={()=> dispatch({type: "NEXT_QUESTION"})}

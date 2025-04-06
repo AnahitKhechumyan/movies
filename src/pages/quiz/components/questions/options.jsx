@@ -1,6 +1,6 @@
 import {useContext} from 'react';
 import {QuizContext} from '../../context/quiz-context';
- 
+import "./questions.css";
 
 export const Options = ({question})=> {
     const { dispatch, answer} = useContext(QuizContext);

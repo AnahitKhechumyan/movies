@@ -7,7 +7,7 @@
   }
   h3,
   h2{
-    color: var(--color-medium);
+    color: var(--color-shadow);
   }
   .btn{
     box-shadow: 5px 5px 10px grey;

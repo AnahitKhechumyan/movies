@@ -9,7 +9,8 @@
     map: "map",
     signin: "signin",
   }; 
- 
+
+
  export const MoviesProvider = ({children}) => {
     const [searchQuery, setSearchQuery] = useState("");
     const [activeTab, setActiveTab] = useState(tab.search);

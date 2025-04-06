@@ -6,6 +6,9 @@
     padding: 30px;
     box-shadow: 20px 20px 20px rgb(81, 77, 77);
  }
+ .list-group-item{
+    height: 6vh;
+ }
  .d-flex{
     align-items: center;
  }

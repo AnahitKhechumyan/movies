@@ -62,16 +62,18 @@ const Tabs = ()=>{
   );
 };
 
-const Layout =()=>{
+ export const Layout =()=>{
   const { activeTab } = useContext(MoviesContext);
 
   return (
     <>
+      
       {activeTab === tab.search && <SearchMovies />}
       {activeTab === tab.movies && <Movies />}
       {activeTab === tab.quiz && <Quiz />}
       {activeTab === tab.map && <GoogleMap />}
       {activeTab === tab.signin && <SignIn />}
+ 
     </>
   );
 };
@@ -79,13 +81,13 @@ const Layout =()=>{
  
 function App() {
    return (
-    <MoviesProvider> 
-      <div className="App">
-          <Header />
-          <Tabs/>
-          <Layout />
-      </div>
-    </MoviesProvider>
+      <MoviesProvider> 
+        <div className="App"> 
+           <Header />
+           <Tabs/>
+           <Layout />
+        </div> 
+      </MoviesProvider>
   );
 }
 

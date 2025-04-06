@@ -17,8 +17,11 @@
    color: white;
  }
 
-footer h5{
-  margin-left: 25%;
+  footer span{
+  width: 150px;
+  margin-left: 22%;
+  font-size: 25px !important;
+  color:  #d73904 !important;
 }
   
    

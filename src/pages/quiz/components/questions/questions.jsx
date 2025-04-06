@@ -1,7 +1,7 @@
-import "./questions.css";
 import {useContext} from 'react';
 import { QuizContext } from '../../context/quiz-context';
 import { Options } from './options';
+import "./questions.css";
 
 export const Questions = ()=> { 
     const ctx = useContext(QuizContext);

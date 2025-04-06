@@ -51,7 +51,7 @@ export const SearchMovies = () => {
                 setLoading(false);
             })
             .catch(() => {
-                console.log('There was an error while retrieving the data')
+                console.error('There was an error while retrieving the data')
             })
 }, [])
 

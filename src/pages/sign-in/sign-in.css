@@ -1,5 +1,4 @@
-  
-form{
+.signin-form{
     margin-top: 100px;
     width: 80%;
     height: 60vh;
@@ -7,7 +6,7 @@ form{
     flex-direction: column;
 }
 .d-flex{
-    color:rgb(168, 48, 4);
+    color:#d73904;
 }
 .form-input{
     width: 100%;
@@ -30,10 +29,53 @@ height: calc(100% - 73px);
 a{
     text-decoration: none;
 }
-.btn{
-   color:rgb(168, 48, 4);
-}
  
+input {
+    background: #f2f2f2;
+  }
+span {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #f90808;
+    margin-bottom: 15px;
+  }
+  
+  .error {
+    border-style: solid;
+    border: 2px solid #f90808;
+  }
+  
+  button {
+    border-radius:8px;
+    border-style:none;
+    padding: 4px 0;
+    font-weight: bold;
+    background-color: var(--color-accent); 
+    box-shadow: 3px 3px 5px var(--color-shadow);
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover{
+    background-color: #f59f70;
+    color:var(--color-shadow);
+  }
+  
+  button:disabled {
+    cursor: default;
+  }
+  
+  .success-message {
+    font-size: 50px;
+    background-color: #f59f70;
+    padding: 15px;
+    text-align: center;
+  }
+  .success-message h3{
+    color: #d73904;
+  }
+
+
  
 @media (max-width: 450px) {
     .h-custom {

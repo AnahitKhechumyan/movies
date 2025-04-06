@@ -11,7 +11,7 @@ export const Header = ()=>{
    },[]); 
   
   return (
-      <header className="bg-secondary text-white p-2 d-flex ">
+      <header className="bg-secondary text-white   d-flex ">
         <div className="logo">
           <span>🎬</span>
           <h1>My Movies</h1>
