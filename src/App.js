@@ -17,48 +17,49 @@ const Tabs = ()=>{
   };
   
   return (
-    <ul className="nav nav-tabs">
-       <li className="nav-item">
-          <button
-            onClick={() => setActiveTab(tab.search)}
-            className={getTabClasses(tab.search)}
-          >
-             Search Movies
-          </button>
-        </li>
-        <li className="nav-item">
-            <button 
-             onClick={() => setActiveTab(tab.movies)}
-             className={getTabClasses(tab.movies)} 
+    
+      <ul className="nav nav-tabs">
+         <li className="nav-item">
+            <button
+              onClick={() => setActiveTab(tab.search)}
+              className={getTabClasses(tab.search)}
             >
-               My Movie List
-             </button>
-        </li>
-        <li className="nav-item">
-            <button 
-             onClick={() => setActiveTab(tab.quiz)}
-             className={getTabClasses(tab.quiz)}
-            >
-             <i class="bi bi-camera-reels"></i> Quiz
+               Search Movies
             </button>
-        </li>
-        <li className="nav-item">
-            <button 
-             onClick={() => setActiveTab(tab.map)}
-             className={getTabClasses(tab.map)}
-            >
-            <i className="bi bi-geo-alt"></i> Here You can find the nearest Cinema.
-            </button>
-        </li>
-        <li className="nav-item last">
-            <button 
-             onClick={() => setActiveTab(tab.signin)}
-             className={getTabClasses(tab.signin)}
-            >
-             Sign In
-            </button>
-        </li>
-     </ul>
+          </li>
+          <li className="nav-item">
+              <button 
+               onClick={() => setActiveTab(tab.movies)}
+               className={getTabClasses(tab.movies)} 
+              >
+                 My Movie List
+               </button>
+          </li>
+          <li className="nav-item">
+              <button 
+               onClick={() => setActiveTab(tab.quiz)}
+               className={getTabClasses(tab.quiz)}
+              >
+               <i class="bi bi-camera-reels"></i> Quiz
+              </button>
+          </li>
+          <li className="nav-item">
+              <button 
+               onClick={() => setActiveTab(tab.map)}
+               className={getTabClasses(tab.map)}
+              >
+              <i className="bi bi-geo-alt"></i> Here You can find the nearest Cinema.
+              </button>
+          </li>
+          <li className="nav-item last">
+              <button 
+              onClick={() => setActiveTab(tab.signin)}
+              className={getTabClasses(tab.signin)}
+              >
+              Sign In
+              </button>
+            </li>
+         </ul>
   );
 };
 
@@ -66,14 +67,12 @@ const Tabs = ()=>{
   const { activeTab } = useContext(MoviesContext);
 
   return (
-    <>
-      
-      {activeTab === tab.search && <SearchMovies />}
+    <> 
+      {activeTab === tab.search && <SearchMovies />} 
       {activeTab === tab.movies && <Movies />}
       {activeTab === tab.quiz && <Quiz />}
       {activeTab === tab.map && <GoogleMap />}
       {activeTab === tab.signin && <SignIn />}
- 
     </>
   );
 };
@@ -84,7 +83,7 @@ function App() {
       <MoviesProvider> 
         <div className="App"> 
            <Header />
-           <Tabs/>
+           <Tabs/>  
            <Layout />
         </div> 
       </MoviesProvider>

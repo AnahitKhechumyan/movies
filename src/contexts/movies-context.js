@@ -15,7 +15,7 @@
     const [searchQuery, setSearchQuery] = useState("");
     const [activeTab, setActiveTab] = useState(tab.search);
 
- return <MoviesContext.Provider value={(
+ return  <MoviesContext.Provider value={(
     {
      searchQuery, 
      onSearch: setSearchQuery,

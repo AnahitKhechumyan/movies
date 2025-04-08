@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { omdbApi } from "../../../api/movie.api";
-import "./movie-details.css";
 import { useLocalStorageState } from "../../../hooks/use-local-storage-state";
 import {Flag} from "../../../components/flag/flag";
 import oscar from "../../../assets/images/oscar.png";
 import {CiAlarmOn } from "react-icons/ci";
 import { FaGlobe } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa";
+import "./movie-details.css";
 
 export const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
