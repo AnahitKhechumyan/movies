@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/movies/static/css/main.cae6de91.css",
-    "main.js": "/movies/static/js/main.b11b9aef.js",
+    "main.css": "/movies/static/css/main.56244adb.css",
+    "main.js": "/movies/static/js/main.3256fb86.js",
+    "static/media/videoBg1.mp4": "/movies/static/media/videoBg1.5d173f9b5780e9d9d5cf.mp4",
+    "static/media/videoBg.mp4": "/movies/static/media/videoBg.d2364045779d393e024e.mp4",
     "static/media/bootstrap-icons.woff?": "/movies/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/movies/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "static/media/oscar.png": "/movies/static/media/oscar.9eee27a174436fa52e6f.png",
+    "static/media/GoogleLogo.png": "/movies/static/media/GoogleLogo.81fdb134397492b14f45.png",
     "index.html": "/movies/index.html",
-    "main.cae6de91.css.map": "/movies/static/css/main.cae6de91.css.map",
-    "main.b11b9aef.js.map": "/movies/static/js/main.b11b9aef.js.map"
+    "main.56244adb.css.map": "/movies/static/css/main.56244adb.css.map",
+    "main.3256fb86.js.map": "/movies/static/js/main.3256fb86.js.map"
   },
   "entrypoints": [
-    "static/css/main.cae6de91.css",
-    "static/js/main.b11b9aef.js"
+    "static/css/main.56244adb.css",
+    "static/js/main.3256fb86.js"
   ]
 }
